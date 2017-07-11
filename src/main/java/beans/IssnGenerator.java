@@ -6,12 +6,11 @@ import java.util.logging.Logger;
 import javax.inject.Inject;
 
 import annotations.interceptor_binding.Loggable;
-import annotations.qualifiers.ThirteenDigits;
+import annotations.qualifiers.EightDigits;
 import beans.interfaces.NumberGenerator;
 
-
-@ThirteenDigits
-public class IsbnGenerator implements NumberGenerator {
+@EightDigits
+public class IssnGenerator implements NumberGenerator {
 
 	@Inject
 	private Logger logger;
@@ -19,8 +18,9 @@ public class IsbnGenerator implements NumberGenerator {
 	@Loggable
 	@Override
 	public String generateNumber() {
-		String isbn = "13-84356-" + Math.abs(new Random().nextInt()) % 100000000;
-		logger.info("Generated ISBN : " + isbn);
-		return isbn;
+		String issn = "8-" + Math.abs(new Random().nextInt()) % 100000000;
+		logger.info("Generated ISBN : " + issn);
+		return issn;
 	}
+
 }
