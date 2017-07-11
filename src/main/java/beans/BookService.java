@@ -2,11 +2,12 @@ package beans;
 
 import javax.inject.Inject;
 
+import annotations.interceptor_binding.Loggable;
 import annotations.qualifiers.ThirteenDigits;
 import beans.interfaces.NumberGenerator;
 import entities.Book;
 
-//@Loggable
+@Loggable
 public class BookService {
 	
 	@Inject @ThirteenDigits
