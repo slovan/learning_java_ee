@@ -7,7 +7,9 @@ public class Book {//the book POJO
 	private String number;
 
 	public Book(String title, Float price, String description) {
-		// TODO Auto-generated constructor stub
+		this.title = title;
+		this.price = price;
+		this.description = description;
 	}
 
 	public String getTitle() {
@@ -40,6 +42,12 @@ public class Book {//the book POJO
 
 	public void setNumber(String number) {
 		this.number = number;
+	}
+
+	@Override
+	public String toString() {
+		return "Book [title=\'" + title + "\', price=" + price + ", description=\'" + description + "\', number=\'" + number
+				+ "\']";
 	}
 
 	
