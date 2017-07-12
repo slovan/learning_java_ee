@@ -17,7 +17,7 @@ public class BookServiceIT {
 		
 		Book book = bookService.createBook("Thinking in JAVA", 40.5f, "First book for programming");
 		
-		assertTrue(book.getNumber().startsWith("MOCK"));
+		assertTrue(book.getIsbn().startsWith("MOCK"));
 		
 		weld.shutdown();
 	}

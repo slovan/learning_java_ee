@@ -4,7 +4,8 @@ public class Book {//the book POJO
 	private String title;
 	private Float price;
 	private String description;
-	private String number;
+	private String isbn;
+	private String issn;
 
 	public Book(String title, Float price, String description) {
 		this.title = title;
@@ -36,18 +37,26 @@ public class Book {//the book POJO
 		this.description = description;
 	}
 
-	public String getNumber() {
-		return number;
+	public String getIsbn() {
+		return isbn;
 	}
 
-	public void setNumber(String number) {
-		this.number = number;
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	public String getIssn() {
+		return issn;
+	}
+
+	public void setIssn(String issn) {
+		this.issn = issn;
 	}
 
 	@Override
 	public String toString() {
-		return "Book [title=\'" + title + "\', price=" + price + ", description=\'" + description + "\', number=\'" + number
-				+ "\']";
+		return "Book [title=\'" + title + "\', price=" + price + ", description=\'" + description + "\', isbn=\'" + isbn
+				+ "\', issn=\'" + issn + "\']";
 	}
 
 	

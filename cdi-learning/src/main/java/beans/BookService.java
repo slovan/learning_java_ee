@@ -1,6 +1,5 @@
 package beans;
 
-import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 
@@ -15,15 +14,18 @@ import entities.Book;
 @Loggable
 public class BookService {
 	
-	@Inject 
+	@Inject
 	@ThirteenDigits
-	//@EightDigits
-	@Alternative
-	private NumberGenerator numberGenerator;
+	private NumberGenerator isbnGenerator;
+	
+	@Inject 
+	@EightDigits
+	private NumberGenerator issnGenerator;
 
 	public Book createBook(String title, Float price, String description) {
 		Book book = new Book(title, price, description);
-		book.setNumber(numberGenerator.generateNumber());
+		book.setIsbn(isbnGenerator.generateNumber());
+		book.setIssn(issnGenerator.generateNumber());
 		return book;
 	}
 }
