@@ -19,7 +19,7 @@ public class IssnGenerator implements NumberGenerator {
 	@Override
 	public String generateNumber() {
 		String issn = "8-" + Math.abs(new Random().nextInt()) % 100000000;
-		logger.info("Generated ISBN : " + issn);
+		logger.info("Generated ISSN : " + issn);
 		return issn;
 	}
 
