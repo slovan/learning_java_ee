@@ -1,1 +1,6 @@
-/target/
+.project
+.settings/
+/cdi-learning/target/
+/cdi-learning/.classpath
+/cdi-learning/.project
+/cdi-learning/.settings/
