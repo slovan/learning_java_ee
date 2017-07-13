@@ -7,5 +7,6 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>cdi-learning</module>
+		<module>bean-validation-learning</module>
 	</modules>
 </project>
