@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Fri Jul 14 16:03:58 CEST 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015d-4169-ca91-000006008390 
+on database directory memory:D:\ponomarenko\java\java_ee_tutorial\learning-javaee-parent\jpa-learning\sampleDB with class loader sun.misc.Launcher$AppClassLoader@4dc63996 
+Loaded from file:/C:/Users/ponomarenko.volodymy/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-b11
+user.dir=D:\ponomarenko\java\java_ee_tutorial\learning-javaee-parent\jpa-learning
+os.name=Windows 7
+os.arch=amd64
+os.version=6.1
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
