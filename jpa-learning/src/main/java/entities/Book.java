@@ -1,10 +1,6 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -25,10 +21,7 @@ public class Book {
 	private Boolean illustrations;
 
 	public Book() {
-		// TODO Auto-generated constructor stub
 	}
-	
-	
 
 	public Book(String title, String description, Float price, String isbn, Integer nbOfPage, Boolean illustrations) {
 		this.title = title;

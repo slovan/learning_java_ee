@@ -35,8 +35,8 @@ public class BookIT {
 	@Test
 	public void shouldFindJavaEE7Book() throws Exception {
 		Book book;
-		book = em.createNamedQuery("findBookH2G2", Book.class).getSingleResult();
-		//book = em.find(Book.class, 1001L);
+		//book = em.createNamedQuery("findAllBooks", Book.class).getResultList().get(0);
+		book = em.find(Book.class, 1001L);
 		assertNotNull("Book schould be found", book);
 		assertEquals("Beginning Java EE 7", book.getTitle());
 	}
