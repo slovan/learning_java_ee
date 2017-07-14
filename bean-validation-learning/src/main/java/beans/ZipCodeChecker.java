@@ -1,9 +1,11 @@
-package services;
+package beans;
 
+import qualifiers.annotations.USA;
+
+@USA
 public class ZipCodeChecker {
 
 	public boolean isZipCodeValid(String value) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

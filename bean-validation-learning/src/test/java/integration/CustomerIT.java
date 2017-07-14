@@ -39,11 +39,11 @@ public class CustomerIT {
 
 	@Test
 	public void shouldRaiseConstraintViolationCauseInvalidEmail() {
-		Customer customer = new Customer("John", "Smith", "DummyEmail");
+		Customer customer = new Customer("John", "Smith", "dummy");
 		Set<ConstraintViolation<Customer>> violations = validator.validate(customer);
 		assertEquals(1, violations.size());
 		assertEquals("invalid email address", violations.iterator().next().getMessage());
-		assertEquals("dummy", violations.iterator().next().getInvalidValue());
+		assertEquals("jsmith@gmail.com", violations.iterator().next().getInvalidValue());
 		assertEquals("{constraints.annotations.Email.message}",
 				violations.iterator().next().getMessageTemplate());
 	}
