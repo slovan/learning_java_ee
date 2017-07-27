@@ -9,5 +9,6 @@
 		<module>cdi-learning</module>
 		<module>bean-validation-learning</module>
 		<module>jpa-learning</module>
+		<module>jsf-learning</module>
 	</modules>
 </project>
