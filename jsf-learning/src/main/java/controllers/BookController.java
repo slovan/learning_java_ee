@@ -1,7 +1,7 @@
 package controllers;
 
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.RequestScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -35,6 +35,4 @@ public class BookController {
 	public void setBook(Book book) {
 		this.book = book;
 	}
-	
-	
 }
