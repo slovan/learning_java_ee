@@ -7,20 +7,22 @@
 <ui:composition template="layout.xhtml">
 	<ui:define name="title">Create a new book</ui:define>
 	<ui:define name="content">
+		<h:messages infoStyle="color:blue" warnStyle="color:orange"
+			errorStyle="color:red" />
 		<h:form id="bookForm">
-			<h:panelGrid columns="2">
+			<h:panelGrid columns="3">
 				<h:outputLabel value="Title : " />
-				<h:inputText value="#{bookController.book.title}" />
+				<h:inputText id="title" value="#{bookController.book.title}" /><h:message for="title" />
 				<h:outputLabel value="Price : " />
-				<h:inputText value="#{bookController.book.price}" />
+				<h:inputText id="price" value="#{bookController.book.price}" /><h:message for="price" />
 				<h:outputLabel value="Description : " />
-				<h:inputTextarea value="#{bookController.book.description}"
-					cols="16" rows="3" />
+				<h:inputTextarea id="desc" value="#{bookController.book.description}"
+					cols="16" rows="3" /><h:message for="desc" />
 				<h:outputLabel value="Number of pages : " />
-				<h:inputText value="#{bookController.book.nbOfPage}" />
+				<h:inputText id="nop" value="#{bookController.book.nbOfPage}" /><h:message for="nop" />
 				<h:outputLabel value="Illustrations : " />
-				<h:selectBooleanCheckbox
-					value="#{bookController.book.illustrations}" />
+				<h:selectBooleanCheckbox id="ill"
+					value="#{bookController.book.illustrations}" /><h:message for="ill" />
 			</h:panelGrid>
 			<h:commandButton value="Create a book"
 				action="#{bookController.doCreateBook}">
