@@ -10,5 +10,6 @@
 		<module>bean-validation-learning</module>
 		<module>jpa-learning</module>
 		<module>jsf-learning</module>
+		<module>rest-learning</module>
 	</modules>
 </project>
