@@ -1,6 +1,4 @@
-package resteasy.jackson.client;
-
-import resteasy.jackson.Student;
+package jackson.client;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
@@ -31,7 +29,7 @@ public class RESTEasyClient {
 
             // post
             Client client = ClientBuilder.newClient();
-            WebTarget target = client.target("http://localhost:8080/rest-learning/stud/jsonServices/send");
+            WebTarget target = client.target("http://localhost:8080/rest-server/stud/jsonServices/send");
 
             Response response = target.request().post(Entity.entity(st, MediaType.APPLICATION_JSON));
 
@@ -41,7 +39,8 @@ public class RESTEasyClient {
             }
 
 
-            System.out.println("Server response : \n");
+            System.out.println("Server response :");
+//            System.out.println(response.readEntity(Student.class).toString());
             System.out.println(response.readEntity(String.class));
             response.close();
             this.statusMsg = "Message was successfully sent!";

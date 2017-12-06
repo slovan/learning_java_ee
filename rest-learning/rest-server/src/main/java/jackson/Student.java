@@ -1,4 +1,4 @@
-package resteasy.jackson;
+package jackson;
 
 /**
  * https://examples.javacodegeeks.com/enterprise-java/rest/resteasy/json-example-with-resteasy-jackson/

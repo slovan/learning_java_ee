@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>rest-learning</artifactId>
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
 
     <properties>
         <failOnMissingWebXml>false</failOnMissingWebXml>
@@ -17,6 +17,11 @@
         <version.wildfly.maven.plugin>1.1.0.Final</version.wildfly.maven.plugin>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <modules>
+        <module>rest-client</module>
+        <module>rest-server</module>
+    </modules>
 
     <!--<dependencyManagement>-->
         <!--<dependencies>-->
@@ -38,17 +43,11 @@
             <type>pom</type>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>jaxrs-api</artifactId>
-            <version>3.0.12.Final</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.jboss.resteasy</groupId>-->
+            <!--<artifactId>resteasy-client</artifactId>-->
+            <!--<version>3.1.4.Final</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
