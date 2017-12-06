@@ -4,3 +4,5 @@
 /cdi-learning/.classpath
 /cdi-learning/.project
 /cdi-learning/.settings/
+/.idea/
+*.iml

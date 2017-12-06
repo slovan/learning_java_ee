@@ -2,12 +2,14 @@ package jackson.client;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
+import javax.management.*;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import javax.ws.rs.core.*;
+import java.lang.management.ManagementFactory;
+import java.net.URI;
 
 /**
  * https://examples.javacodegeeks.com/enterprise-java/rest/resteasy/json-example-with-resteasy-jackson/
@@ -21,15 +23,9 @@ public class RESTEasyClient {
     public void sendMessage() {
         Student st = new Student("Catain", "Hook", 10, 12);
         try {
-            // get
-//            Client client = ClientBuilder.newClient();
-//            WebTarget target = client.target("http://localhost:8080/rest-learning/stud/jsonServices/print/James");
-//            Student st2 = target.request().get(Student.class);
-//            System.out.println(st2.toString());
 
-            // post
             Client client = ClientBuilder.newClient();
-            WebTarget target = client.target("http://localhost:8080/rest-server/stud/jsonServices/send");
+            WebTarget target = client.target(buildTargetURI());
 
             Response response = target.request().post(Entity.entity(st, MediaType.APPLICATION_JSON));
 
@@ -50,6 +46,22 @@ public class RESTEasyClient {
         }
 
 
+    }
+
+    private URI buildTargetURI() throws MalformedObjectNameException, AttributeNotFoundException, MBeanException, ReflectionException, InstanceNotFoundException {
+        return UriBuilder.fromPath("rest-server/stud/jsonServices/send")
+                .host(obtainTargetHost())
+                .scheme("http")
+                .port(obtainTargetPort())
+                .build();
+    }
+
+    private String obtainTargetHost() throws MalformedObjectNameException, AttributeNotFoundException, MBeanException, ReflectionException, InstanceNotFoundException {
+        return (String) ManagementFactory.getPlatformMBeanServer().getAttribute(new ObjectName("jboss.as:interface=public"), "inet-address");
+    }
+
+    private int obtainTargetPort() throws MalformedObjectNameException, AttributeNotFoundException, MBeanException, ReflectionException, InstanceNotFoundException {
+        return (int) ManagementFactory.getPlatformMBeanServer().getAttribute(new ObjectName("jboss.as:socket-binding-group=standard-sockets,socket-binding=http"), "port");
     }
 
     public String getStatusMsg() {
